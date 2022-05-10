@@ -23,6 +23,10 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
+
 Route.get('/hello-world', async ({ view }) => {
-  return view.render('hello-world')
+  const html = await view.render('hello-world', {
+    name: 'Victor de Souza Magaldi',
+  })
+  return html
 })
