@@ -32,6 +32,13 @@ Route.get('/hello-world', async ({ view }) => {
   return html
 })
 
+Route.get('/list', async ({ view }) => {
+  const html = await view.render('list', {
+    list: ['Victor de Souza Magaldi', 'Victor de Souza Magaldi 2', 'Victor de Souza Magaldi 3'],
+  })
+  return html
+})
+
 Route.get('/user/:id', async ({ response, request }) => {
   response.send({ 'route-params': request?.params(), 'query-params': request?.qs() })
 })
