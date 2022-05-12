@@ -34,3 +34,5 @@ Route.get('/hello-world', async ({ view }) => {
 Route.get('/user/:id', async ({ response, request }) => {
   response.send({ 'route-params': request?.params(), 'query-params': request?.qs() })
 })
+
+Route.get('/post-controller', 'PostsController.index')
