@@ -18,9 +18,7 @@
 |
 */
 
-
 import Route from '@ioc:Adonis/Core/Route'
-import Application from '@ioc:Adonis/Core/Application'
 import path from 'path'
 
 Route.get('/', async ({ view }) => {
