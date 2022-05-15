@@ -56,3 +56,11 @@ Route.post('/post-image', async ({ request }) => {
   }
   return { saved: true }
 })
+
+Route.post('add-to-cart', async ({ request, response }) => {
+  const existingItems = request.cookie('outro', [])
+
+  console.log('teste ', existingItems)
+  const newItems = existingItems.concat([{ id: 10 }])
+  response.cookie('outro', newItems)
+})
