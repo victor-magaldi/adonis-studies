@@ -64,3 +64,11 @@ Route.post('add-to-cart', async ({ request, response }) => {
   const newItems = existingItems.concat([{ id: 10 }])
   response.cookie('outro', newItems)
 })
+
+Route.get('/session', async ({ session }) => {
+  // Read value
+  const cartTotal = session.get('cart_total')
+  console.log('Cart Total ', cartTotal)
+  // Write value
+  session.put('cart_total', cartTotal + 10)
+})
