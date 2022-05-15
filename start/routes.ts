@@ -46,12 +46,9 @@ Route.get('/user/:id', async ({ response, request }) => {
 Route.get('/post-controller', 'PostsController.index')
 
 Route.post('/post-image', async ({ request }) => {
-  console.log('body', request.body())
   const thumbnail = request.file('thumbnail')
 
   if (thumbnail) {
-    console.log('thumbnail', thumbnail)
-
     await thumbnail.moveToDisk(path.resolve(__dirname, '..', 'public', 'assets'), {
       name: String(new Date().getTime()) + '-' + thumbnail?.clientName,
       contentType: 'image/png',
